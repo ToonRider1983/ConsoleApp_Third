@@ -13,7 +13,7 @@ namespace ConsoleApp_Third {
             string[] studentName;
 
             // Firstly, The program ask the user about student quantity.
-            Console.Write("How much student? : ");
+            Console.Write("How many students? : ");
             quantityOfStudent = int.Parse( Console.ReadLine() );
 
             // Secondly, re-allocating array sizing.
@@ -22,7 +22,7 @@ namespace ConsoleApp_Third {
             finalScore = new int[quantityOfStudent];
             sumScore = new int[quantityOfStudent];
 
-            // Thirdly, The user feild each student information.
+            // Thirdly, The user key each student information.
             Console.WriteLine(":: Student Information ::");
             for (int iterator = 0; iterator < quantityOfStudent; iterator++)
             {
@@ -43,19 +43,87 @@ namespace ConsoleApp_Third {
                 studentCounter++;
             }
 
-            Console.WriteLine("\n:: Show score student's score and graded ::");
+            // Fourthly, We have to grades processing from each people's 'sumScore[]'. 
+            Console.WriteLine("\n:: List of students and grades ::");
             int _iterator = 0;
 
-            do
-            {
-                float _graded = 0.0f;
+            do {
+                float gradesScore = 0.0f;   // This is the local variables in 'do..while' statement.
 
+                #region Writng an if..else..if code without curly brackets type 1. 
+
+                // For example, we use this region as defualt code.
+                if (sumScore[_iterator] <= 49) gradesScore = 0f; 
+                else if (sumScore[_iterator] <= 54) gradesScore = 1f;
+                else if (sumScore[_iterator] <= 59) gradesScore = 1.5f;
+                else if (sumScore[_iterator] <= 64) gradesScore = 2f;
+                else if (sumScore[_iterator] <= 69) gradesScore = 2.5f;
+                else if (sumScore[_iterator] <= 74) gradesScore = 3f;
+                else if (sumScore[_iterator] <= 79) gradesScore = 3.5f;
+                else if (sumScore[_iterator] >= 80) gradesScore = 4f;
+
+                #endregion
+
+                #region Writing an if..else..if code without curly brackets type 2
+                /*
+                if (sumScore[_iterator] <= 49) 
+                    gradesScore = 0f;
+                else if (sumScore[_iterator] <= 54) 
+                    gradesScore = 1f;
+                else if (sumScore[_iterator] <= 59) 
+                    gradesScore = 1.5f;
+                else if (sumScore[_iterator] <= 64) 
+                    gradesScore = 2f;
+                else if (sumScore[_iterator] <= 69) 
+                    gradesScore = 2.5f;
+                else if (sumScore[_iterator] <= 74) 
+                    gradesScore = 3f;
+                else if (sumScore[_iterator] <= 79) 
+                    gradesScore = 3.5f;
+                else if (sumScore[_iterator] >= 80) 
+                    gradesScore = 4f;
+                */
+                #endregion
+
+                #region Writing an if..else..if code with curly brackets.
+                /*
                 if (sumScore[_iterator] <= 49)
-                    _graded = 0;
+                {
+                    gradesScore = 0f;
+                }
                 else if (sumScore[_iterator] <= 54)
-                       _graded = 1;
+                {
+                    gradesScore = 1f;
+                }
+                else if (sumScore[_iterator] <= 59)
+                {
+                    gradesScore = 1.5f;
+                }
+                else if (sumScore[_iterator] <= 64)
+                {
+                    gradesScore = 2f;
+                }
+                else if (sumScore[_iterator] <= 69)
+                {
+                    gradesScore = 2.5f;
+                }
+                else if (sumScore[_iterator] <= 74)
+                {
+                    gradesScore = 3f;
+                }
+                else if (sumScore[_iterator] <= 79)
+                {
+                    gradesScore = 3.5f;
+                }
+                else if (sumScore[_iterator] >= 80)
+                {
+                    gradesScore = 4f;
+                }
+                */
+                #endregion
 
-                Console.WriteLine($"{studentName[_iterator]} have total score is {sumScore[_iterator]}");
+                Console.WriteLine($"{_iterator + 1}. {studentName[_iterator]} have a" +
+                                $" total {sumScore[_iterator]} score or {gradesScore} grades.");
                 _iterator++;
             } while (_iterator < quantityOfStudent);
 
