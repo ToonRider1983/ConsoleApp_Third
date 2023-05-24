@@ -48,8 +48,16 @@ namespace ConsoleApp_Third {
 
             do
             {
+                float _graded = 0.0f;
+
+                if (sumScore[_iterator] <= 49)
+                    _graded = 0;
+                else if (sumScore[_iterator] <= 54)
+                       _graded = 1;
+
                 Console.WriteLine($"{studentName[_iterator]} have total score is {sumScore[_iterator]}");
-            } while (_iterator <= quantityOfStudent);
+                _iterator++;
+            } while (_iterator < quantityOfStudent);
 
 
             Console.Write("\nPress any key enter....");
