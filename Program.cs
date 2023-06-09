@@ -14,7 +14,7 @@ namespace ConsoleApp_Third {
 
             // Firstly, The program ask the user about student quantity.
             Console.Write("How many students? : ");
-            quantityOfStudent = int.Parse( Console.ReadLine() );
+            quantityOfStudent = int.Parse( Console.ReadLine() ); // Convert 'string' from Console.ReadLine() to 'int'.
 
             // Secondly, re-allocating array sizing.
             studentName = new string[quantityOfStudent];
@@ -59,27 +59,6 @@ namespace ConsoleApp_Third {
                 else if (sumScore[_iterator] <= 79) gradesScore = 3.5f;
                 else if (sumScore[_iterator] >= 80) gradesScore = 4f;
 
-                #endregion
-
-                #region Writing an if..else..if code without curly brackets type 2
-                /*
-                if (sumScore[_iterator] <= 49) 
-                    gradesScore = 0f;
-                else if (sumScore[_iterator] <= 54) 
-                    gradesScore = 1f;
-                else if (sumScore[_iterator] <= 59) 
-                    gradesScore = 1.5f;
-                else if (sumScore[_iterator] <= 64) 
-                    gradesScore = 2f;
-                else if (sumScore[_iterator] <= 69) 
-                    gradesScore = 2.5f;
-                else if (sumScore[_iterator] <= 74) 
-                    gradesScore = 3f;
-                else if (sumScore[_iterator] <= 79) 
-                    gradesScore = 3.5f;
-                else if (sumScore[_iterator] >= 80) 
-                    gradesScore = 4f;
-                */
                 #endregion
 
                 #region Writing an if..else..if code with curly brackets.
