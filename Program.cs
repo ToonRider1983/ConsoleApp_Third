@@ -8,7 +8,7 @@ namespace ConsoleApp_Third {
     internal class Program {
         static void Main(string[] args)
         {
-            int quantityOfStudent = 1, studentCounter = 1;
+            int quantityOfStudent = 1;
             int[] midScore, finalScore, sumScore;
             string[] studentName;
 
@@ -27,7 +27,7 @@ namespace ConsoleApp_Third {
             for (int iterator = 0; iterator < quantityOfStudent; iterator++)
             {
                 // User feild student name, middle and final score information.
-                Console.Write($"\nPlease key student({studentCounter} of {quantityOfStudent}) name : ");
+                Console.Write($"\nPlease key student({iterator + 1} of {quantityOfStudent}) name : ");
                 studentName[iterator] = Console.ReadLine();
 
                 Console.Write($"Please key {studentName[iterator]}'s middle score : ");
@@ -38,9 +38,6 @@ namespace ConsoleApp_Third {
 
                 // Score summation 
                 sumScore[iterator] = midScore[iterator] + finalScore[iterator];
-
-                // increment the counter variable values
-                studentCounter++;
             }
 
             // Fourthly, We have to grades processing from each people's 'sumScore[]'. 
@@ -126,7 +123,6 @@ namespace ConsoleApp_Third {
                                 $" total {sumScore[_iterator]} score or {gradesScore} grades.");
                 _iterator++;
             } while (_iterator < quantityOfStudent);
-
 
             Console.Write("\nPress any key enter....");
             Console.ReadLine();
